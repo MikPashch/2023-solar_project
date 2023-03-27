@@ -1,2 +1,2 @@
 # solar_project
-Модель Солнечной системы на языке Python
+МMilky Way project on Python
