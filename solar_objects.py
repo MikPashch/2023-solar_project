@@ -3,80 +3,80 @@
 
 
 class Star:
-    """Тип данных, описывающий звезду.
-    Содержит массу, координаты, скорость звезды,
-    а также визуальный радиус звезды в пикселах и её цвет.
+    """Type data, describes the star.
+    Included weight, coordinates, speed of star,
+    radius in the pexels and color
     """
 
     type = "star"
-    """Признак объекта звезды"""
+    """type of initialization of planet"""
 
     m = 0
-    """Масса звезды"""
+    """weight of the planet"""
 
     x = 0
-    """Координата по оси **x**"""
+    """coordinate by **x**"""
 
     y = 0
-    """Координата по оси **y**"""
+    """coordinate by **y**"""
 
     Vx = 0
-    """Скорость по оси **x**"""
+    """speed by **x**"""
 
     Vy = 0
-    """Скорость по оси **y**"""
+    """speed by **y**"""
 
     Fx = 0
-    """Сила по оси **x**"""
+    """force by **x**"""
 
     Fy = 0
-    """Сила по оси **y**"""
+    """force by **y**"""
 
     R = 5
-    """Радиус звезды"""
+    """radius of the star"""
 
     color = "red"
-    """Цвет звезды"""
+    """color of the star"""
 
     image = None
-    """Изображение звезды"""
+    """image of the planet"""
 
 
 class Planet:
-    """Тип данных, описывающий планету.
-    Содержит массу, координаты, скорость планеты,
-    а также визуальный радиус планеты в пикселах и её цвет
+    """Type data, describes the planet.
+    Included weight, coordinates, speed of planet,
+    radius in the pexels and color
     """
 
     type = "planet"
-    """Признак объекта планеты"""
+    """type of initialization of planet"""
 
     m = 0
-    """Масса планеты"""
+    """weight of the planet"""
 
     x = 0
-    """Координата по оси **x**"""
+    """coordinate by **x**"""
 
     y = 0
-    """Координата по оси **y**"""
+    """coordinate by **y**"""
 
     Vx = 0
-    """Скорость по оси **x**"""
+    """speed by **x**"""
 
     Vy = 0
-    """Скорость по оси **y**"""
+    """speed by **y**"""
 
     Fx = 0
-    """Сила по оси **x**"""
+    """force by **x**"""
 
     Fy = 0
-    """Сила по оси **y**"""
+    """force by **y**"""
 
     R = 5
-    """Радиус планеты"""
+    """radius of the planet"""
 
     color = "green"
-    """Цвет планеты"""
+    """color of the planet"""
 
     image = None
-    """Изображение планеты"""
+    """image of the planet"""
