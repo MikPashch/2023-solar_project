@@ -80,3 +80,10 @@ class Planet:
 
     image = None
     """image of the planet"""
+
+    statistic = [[], [], []]
+    """statistics:
+        1) time
+        2) module of the speed
+        3) distance from the star
+    """
