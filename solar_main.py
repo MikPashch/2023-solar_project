@@ -10,29 +10,28 @@ from solar_model import *
 from solar_input import *
 
 perform_execution = False
-"""Флаг цикличности выполнения расчёта"""
+"""Cyclic calculation flag."""
 
 physical_time = 0
-"""Физическое время от начала расчёта.
-Тип: float"""
+"""Physical time elapsed since the start of the calculation.
+Type: float"""
 
 displayed_time = None
-"""Отображаемое на экране время.
-Тип: переменная tkinter"""
+"""Time displayed on the screen.
+Type: tkinter variable."""
 
 time_step = None
-"""Шаг по времени при моделировании.
-Тип: float"""
+"""Time step in the simulation.
+Type: float."""
 
 space_objects = []
-"""Список космических объектов."""
+"""List of celestial objects."""
 
 
 def execution():
-    """Функция исполнения -- выполняется циклически, вызывая обработку всех небесных тел,
-    а также обновляя их положение на экране.
-    Цикличность выполнения зависит от значения глобальной переменной perform_execution.
-    При perform_execution == True функция запрашивает вызов самой себя по таймеру через время от 1 мс до 100 мс.
+    """The execution function - runs cyclically, processing all celestial bodies and updating their positions on the screen.
+    The cyclic execution depends on the value of the global variable 'perform_execution'.
+    When 'perform_execution' is True, the function requests a timer-based call to itself with a time interval between 1 ms and 100 ms.
     """
     global physical_time
     global displayed_time
@@ -57,8 +56,8 @@ def execution():
 
 
 def start_execution():
-    """Обработчик события нажатия на кнопку Start.
-    Запускает циклическое исполнение функции execution.
+    """Event handler for the Start button click.
+    Starts the cyclic execution of the 'execution' function.
     """
     global perform_execution
     perform_execution = True
@@ -70,8 +69,8 @@ def start_execution():
 
 
 def stop_execution():
-    """Обработчик события нажатия на кнопку Start.
-    Останавливает циклическое исполнение функции execution.
+    """Event handler for the Stop button click.
+    Stops the cyclic execution of the 'execution' function.
     """
     global perform_execution
     perform_execution = False
@@ -81,15 +80,14 @@ def stop_execution():
 
 
 def open_file_dialog():
-    """Открывает диалоговое окно выбора имени файла и вызывает
-    функцию считывания параметров системы небесных тел из данного файла.
-    Считанные объекты сохраняются в глобальный список space_objects
+    """Opens a file selection dialog and calls the function to read celestial system parameters from the selected file. 
+    The read objects are saved in the global list 'space_objects'.
     """
     global space_objects
     global perform_execution
     perform_execution = False
     for obj in space_objects:
-        space.delete(obj.image)  # удаление старых изображений планет
+        space.delete(obj.image)  # deletion of old planet images.
     in_filename = askopenfilename(filetypes=(("Text file", ".txt"),))
     space_objects = read_space_objects_data_from_file(in_filename)
     max_distance = max([max(abs(obj.x), abs(obj.y)) for obj in space_objects])
@@ -105,9 +103,8 @@ def open_file_dialog():
 
 
 def save_file_dialog():
-    """Открывает диалоговое окно выбора имени файла и вызывает
-    функцию считывания параметров системы небесных тел из данного файла.
-    Считанные объекты сохраняются в глобальный список space_objects
+    """Opens a file selection dialog and calls the function to read celestial system parameters from the selected file. 
+    The read objects are saved in the global list 'space_objects'.
     """
 
     out_filename = asksaveasfilename(filetypes=(("Text file", ".txt"),))
@@ -138,7 +135,7 @@ def graph():
 
 def main():
     """Main function of main module.
-    Создаёт объекты графического дизайна библиотеки tkinter: окно, холст, фрейм с кнопками, кнопки.
+    Creates graphical design objects using the tkinter library: window, canvas, frame with buttons, and buttons.
     """
 
     global physical_time
@@ -152,10 +149,10 @@ def main():
     physical_time = 0
 
     root = tkinter.Tk()
-    # космическое пространство отображается на холсте типа Canvas
+    # The cosmic space is displayed on a Canvas type canvas.
     space = tkinter.Canvas(root, width=window_width, height=window_height, bg="white")
     space.pack(side=tkinter.TOP)
-    # нижняя панель с кнопками
+    # The bottom panel with buttons.
     frame = tkinter.Frame(root)
     frame.pack(side=tkinter.BOTTOM)
 
