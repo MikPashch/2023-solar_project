@@ -1,5 +1,5 @@
-# Солнечная система -- только Солнце и Земля
+# The solar system consists only of the Sun and Earth.
 Star 30 red 1.98892E30 0 0 0 0
 
-# Земля
+# Earth
 Planet 5 green 5.974E24 149.60E9 0 0 29.76E3
