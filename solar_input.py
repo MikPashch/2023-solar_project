@@ -5,19 +5,19 @@ from solar_objects import Star, Planet
 
 
 def read_space_objects_data_from_file(input_filename):
-    """Считывает данные о космических объектах из файла, создаёт сами объекты
-    и вызывает создание их графических образов
+    """Reads data about celestial objects from a file, creates the objects themselves, 
+        and initiates the creation of their graphical representations.
 
-    Параметры:
+    Parameters:
 
-    **input_filename** — имя входного файла
+    **input_filename** — the name of the input file.
     """
 
     objects = []
     with open(input_filename) as input_file:
         for line in input_file:
             if len(line.strip()) == 0 or line[0] == '#':
-                continue  # пустые строки и строки-комментарии пропускаем
+                continue  # Skip empty lines and comment lines.
             object_type = line.split()[0].lower()
             if object_type == "star":
                 star = Star()
@@ -34,18 +34,18 @@ def read_space_objects_data_from_file(input_filename):
 
 
 def parse_star_parameters(line, star):
-    """Считывает данные о звезде из строки.
-    Входная строка должна иметь следующий формат:
-    Star <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
-
-    Здесь (x, y) — координаты звезды, (Vx, Vy) — скорость.
-    Пример строки:
+    """Parses data about a star from a string.
+    The input string should have the following format:
+    Star <radius in pixels> <color> <mass> <x> <y> <Vx> <Vy>
+        
+    Here, (x, y) are the star's coordinates, and (Vx, Vy) are its velocities.
+    Example string:
     Star 10 red 1000 1 2 3 4
+    
+    Parameters:
 
-    Параметры:
-
-    **line** — строка с описание звезды.
-    **star** — объект звезды.
+    **line** — a string containing the star's description.
+    **star** — the star object..
     """
 
     parameters = line.split()
@@ -59,19 +59,18 @@ def parse_star_parameters(line, star):
 
 
 def parse_planet_parameters(line, planet):
-    """Считывает данные о планете из строки.
-    Предполагается такая строка:
-    Входная строка должна иметь следующий формат:
-    Planet <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
+    """Parses data about a planet from a string.
+    The input string should have the following format:
+    Planet <radius in pixels> <color> <mass> <x> <y> <Vx> <Vy>
 
-    Здесь (x, y) — координаты планеты, (Vx, Vy) — скорость.
-    Пример строки:
+    Here, (x, y) are the planet's coordinates, and (Vx, Vy) are its velocities.
+    Example string:
     Planet 10 red 1000 1 2 3 4
 
-    Параметры:
+    Parameters:
 
-    **line** — строка с описание планеты.
-    **planet** — объект планеты.
+    **line** — a string containing the planet's description.
+    **planet** — the planet object.
     """
 
     parameters = line.split()
@@ -85,15 +84,15 @@ def parse_planet_parameters(line, planet):
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
-    """Сохраняет данные о космических объектах в файл.
-    Строки должны иметь следующий формат:
-    Star <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
-    Planet <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
+    """Saves data about celestial objects to a file.
+    The lines should have the following format:
+    Star <radius in pixels> <color> <mass> <x> <y> <Vx> <Vy>
+    Planet <radius in pixels> <color> <mass> <x> <y> <Vx> <Vy>"
 
-    Параметры:
+    Parameters:
 
-    **output_filename** — имя входного файла
-    **space_objects** — список объектов планет и звёзд
+    **output_filename** — the name of the input file.
+    **space_objects** — a list of planet and star objects.
     """
 
     with open(output_filename, 'w') as out_file:
